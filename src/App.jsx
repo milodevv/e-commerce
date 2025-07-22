@@ -1,11 +1,14 @@
-// App.jsx
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
+import ProductsList from './pages/products/Products'
 
 function App() {
   return (
     <Router>
-      <Login />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/products" element={<ProductsList />} />
+      </Routes>
     </Router>
   )
 }
