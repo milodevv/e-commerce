@@ -18,7 +18,10 @@
         const response = await fetch('https://vibra.icu/api/v1/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ correo, contrasena })
+            body: JSON.stringify({
+                email: correo,
+                password: contrasena
+            })
         });
         if (!response.ok) {
             const data = await response.json();
